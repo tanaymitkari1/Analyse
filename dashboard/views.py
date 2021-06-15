@@ -53,7 +53,7 @@ def user_register(request):
 
 @login_required(login_url="/login/")
 def dashboard(request):
-    comps = companies.objects.all()
+    comps = companies.objects.filter(user=request.user)
     context = {}
     context["user"] = request.user
     context["comp_list"] = comps
@@ -95,10 +95,13 @@ def add_company(request):
         bv = rp['bv']
         der = rp['der']
         fcf = rp['fcf']
+        sales = rp['sales']
+        market_cap = rp['market_cap']
         input_data = companies.objects.create(
             user=user, stock_name=stock_name, industry=industry, cmp=cmp, date=date, eps1=eps1, eps2=eps2, eps3=eps3,
             eps4=eps4, eps5=eps5, eps6=eps6, eps7=eps7, eps8=eps8, eps9=eps9, cpe=cpe, ipe=ipe, pe1=pe1,
-            pe2=pe2, pe3=pe3, pe4=pe4, pe5=pe5, pe6=pe6, pe7=pe7, pe8=pe8, pe9=pe9, bv=bv, der=der, fcf=fcf
+            pe2=pe2, pe3=pe3, pe4=pe4, pe5=pe5, pe6=pe6, pe7=pe7, pe8=pe8, pe9=pe9, bv=bv, der=der, fcf=fcf, sales=sales,
+            market_cap=market_cap
         )
         input_data.save()
         return HttpResponseRedirect(reverse('dashboard'))
@@ -128,7 +131,7 @@ def details(request, id=None):
     context["peg"] = peg
     pbr = context["list"].cmp/context["list"].bv
     context["pbr"] = pbr
-    roe = context["list"].eps1/context["list"].bv
+    roe = (context["list"].eps1/context["list"].bv)*100
     context["roe"] = roe
     psr = context["list"].market_cap/context["list"].sales
     context["psr"] = psr

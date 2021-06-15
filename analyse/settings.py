@@ -48,7 +48,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'analyse.urls'
@@ -81,10 +80,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'd3fns38atmh3jg',
-        'HOST' : 'ec2-3-218-71-191.compute-1.amazonaws.com',
-        'PORT' : 5432,
-        'USER' : 'txjtmgzhlvueoo',
-        'PASSWORD' : '055be773913140f965ca2e6816059d3f2c5f7511d833f4391a534eeb91b47a34',
+        'HOST': 'ec2-3-218-71-191.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'txjtmgzhlvueoo',
+        'PASSWORD': '055be773913140f965ca2e6816059d3f2c5f7511d833f4391a534eeb91b47a34',
     }
 }
 
@@ -129,7 +128,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
