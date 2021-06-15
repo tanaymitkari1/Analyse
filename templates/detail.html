@@ -1,0 +1,382 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- begin app -->
+    <div class="app">
+        <!-- begin app-wrap -->
+        <div class="app-wrap">
+            <!-- begin pre-loader -->
+            <div class="loader">
+                <div class="h-100 d-flex justify-content-center">
+                    <div class="align-self-center">
+                        <img src="{% static 'img/loader/loader.svg' %}" alt="loader">
+                    </div>
+                </div>
+            </div>
+            <!-- end pre-loader -->
+            <!-- begin app-header -->
+            <header class="app-header top-bar">
+                <!-- begin navbar -->
+                <nav class="navbar navbar-expand-md">
+
+                    <!-- begin navbar-header -->
+                    <div class="navbar-header d-flex align-items-center">
+                        <a href="javascript:void:(0)" class="mobile-toggle"><i class="ti ti-align-right"></i></a>
+                        <a class="navbar-brand" href="index.html">
+                            <img src="{% static 'img/logo.png' %}" class="img-fluid logo-desktop" alt="logo">
+                            <img src="{% static 'img/logo-icon.png' %}" class="img-fluid logo-mobile" alt="logo">
+                        </a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="ti ti-align-left"></i>
+                    </button>
+                    <!-- end navbar-header -->
+                    <!-- begin navigation -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="navigation d-flex">
+                            <ul class="navbar-nav nav-left">
+                                <li class="nav-item">
+                                    <a href="javascript:void(0)" class="nav-link sidebar-toggle">
+                                        <i class="ti ti-align-right"></i>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item full-screen d-none d-lg-block" id="btnFullscreen">
+                                    <a href="javascript:void(0)" class="nav-link expand">
+                                        <i class="icon-size-fullscreen"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav nav-right ml-auto">
+
+                                <li class="nav-item dropdown user-profile">
+                                    <a href="javascript:void(0)" class="nav-link dropdown-toggle " id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img src="https://i.pinimg.com/originals/0c/3b/3a/0c3b3adb1a7530892e55ef36d3be6cb8.png" alt="avtar-img">
+                                        <span class="bg-success user-status"></span>
+                                    </a>
+                                    <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
+                                        <div class="bg-gradient px-4 py-3">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="mr-1">
+                                                    <h4 class="text-white mb-0">User Name</h4>
+                                                    <small class="text-white">Email</small>
+                                                </div>
+                                                <a href="#" class="text-white font-20 tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Logout"> <i class="zmdi zmdi-power"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end navigation -->
+                </nav>
+                <!-- end navbar -->
+            </header>
+            <!-- end app-header -->
+            <!-- begin app-container -->
+            <div class="app-container">
+                <!-- begin app-nabar -->
+                <aside class="app-navbar">
+                    <!-- begin sidebar-nav -->
+                    <div class="sidebar-nav scrollbar scroll_light">
+                        <ul class="metismenu " id="sidebarNav">
+                            <li class="nav-static-title">Personal</li>
+                            <li class="active">
+                                <a class="has-arrow" href="{% url 'dashboard' %}" aria-expanded="false">
+                                    <i class="nav-icon ti ti-rocket"></i>
+                                    <span class="nav-title">Dashboard</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- end sidebar-nav -->
+                </aside>
+                <!-- end app-navbar -->
+                <!-- begin app-main -->
+                <div class="app-main" id="main">
+                    <!-- begin container-fluid -->
+                    <div class="container-fluid">
+                        <!-- begin row -->
+                        <div class="row">
+                            <div class="col-md-12 m-b-30">
+                                <!-- begin page title -->
+                                <div class="d-block d-sm-flex flex-nowrap align-items-center">
+                                    <div class="page-title mb-2 mb-sm-0">
+                                        <h1>Input Fields</h1>
+                                    </div>
+                                    <div class="ml-auto d-flex align-items-center">
+                                        <nav>
+                                            <ol class="breadcrumb p-0 m-b-0">
+                                                <li class="breadcrumb-item">
+                                                    <a href="index.html"><i class="ti ti-home"></i></a>
+                                                </li>
+                                                <li class="breadcrumb-item">
+                                                    Dashboard
+                                                </li>
+                                                <li class="breadcrumb-item active text-primary" aria-current="page">Analyse</li>
+                                            </ol>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <!-- end page title -->
+                            </div>
+                        </div>
+                        <!-- end row -->
+                        <!-- begin row -->
+
+
+                                <!-- begin row -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card card-statistics">
+                                    <div class="card-header">
+                                        <div class="card-heading">
+                                            <h4 class="card-title">Input Mask</h4>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Stock Name</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" value="{{list.stock_name}}" disabled placeholder="" class="form-control inputmask">
+                                                    <span class="font-14 text-muted"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Industry</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder="" value="{{list.industry}}" disabled class="form-control inputmask">
+                                                    <span class="font-14 text-muted"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Current Market Price</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder="" value="{{list.cmp}}" disabled class="form-control inputmask">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Current Date</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder="" value="{{list.date}}" disabled class="form-control inputmask">
+                                                    <span class="font-14 text-muted"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">EPS</label>
+                                                <div class="col-sm-10">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <input type="text" placeholder="" value="{{list.eps1}}" name="eps1" disabled class="form-control inputmask">
+                                                        </div>
+                                                        <div class="col">
+                                                            <input type="text" placeholder="" value="{{list.eps2}}" disabled class="form-control inputmask">
+                                                        </div>
+                                                        <div class="col">
+                                                            <input type="text" placeholder="" value="{{list.eps3}}" disabled class="form-control inputmask">
+                                                        </div>
+                                                        <div class="col">
+                                                            <input type="text" placeholder="" value="{{list.eps4}}" disabled class="form-control inputmask">
+                                                        </div>
+                                                        <div class="col">
+                                                            <input type="text" placeholder="" value="{{list.eps5}}" disabled class="form-control inputmask">
+                                                        </div>
+                                                        <div class="col">
+                                                            <input type="text" placeholder="" value="{{list.eps6}}" disabled class="form-control inputmask">
+                                                        </div>
+                                                        <div class="col">
+                                                            <input type="text" placeholder="" value="{{list.eps7}}" disabled class="form-control inputmask">
+                                                        </div>
+                                                        <div class="col">
+                                                            <input type="text" placeholder="" value="{{list.eps8}}" disabled class="form-control inputmask">
+                                                        </div>
+                                                        <div class="col">
+                                                            <input type="text" placeholder="" value="{{list.eps9}}" name="eps9" disabled class="form-control inputmask">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label"><b>EPS Growth Rate</b></label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder="" value="{{ f_eps }}" disabled class="form-control inputmask">
+                                                    <span class="font-14 text-muted"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Current PE</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder="" value="{{list.cpe}}" disabled class="form-control inputmask">
+                                                    <span class="font-14 text-muted"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Industry PE</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder="" value="{{list.ipe}}" disabled class="form-control inputmask">
+                                                    <span class="font-14 text-muted"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">PE</label>
+                                                <div class="col-sm-10">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <input type="text" placeholder="" value="{{list.pe1}}" disabled class="form-control inputmask">
+                                                        </div>
+                                                        <div class="col">
+                                                            <input type="text" placeholder="" value="{{list.pe2}}" disabled class="form-control inputmask">
+                                                        </div>
+                                                        <div class="col">
+                                                            <input type="text" placeholder="" value="{{list.pe3}}" disabled class="form-control inputmask">
+                                                        </div>
+                                                        <div class="col">
+                                                            <input type="text" placeholder="" value="{{list.pe4}}" disabled class="form-control inputmask">
+                                                        </div>
+                                                        <div class="col">
+                                                            <input type="text" placeholder="" value="{{list.pe5}}" disabled class="form-control inputmask">
+                                                        </div>
+                                                        <div class="col">
+                                                            <input type="text" placeholder="" value="{{list.pe6}}" disabled class="form-control inputmask">
+                                                        </div>
+                                                        <div class="col">
+                                                            <input type="text" placeholder="" value="{{list.pe7}}" disabled class="form-control inputmask">
+                                                        </div>
+                                                        <div class="col">
+                                                            <input type="text" placeholder="" value="{{list.pe8}}" disabled class="form-control inputmask">
+                                                        </div>
+                                                        <div class="col">
+                                                            <input type="text" placeholder="" value="{{list.pe9}}" disabled class="form-control inputmask">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label"><b>Average PE</b></label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder="" value="{{ average_pe }}" disabled class="form-control inputmask">
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label"><b>PE Growth Rate</b></label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder="" value="{{ pegr }}" disabled class="form-control inputmask">
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label"><b>Best case PE</b></label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder="" value="{{ bpe }}" disabled class="form-control inputmask">
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label"><b>Intransic Value</b></label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder=""  value="{{ iv }}" disabled class="form-control inputmask">
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label"><b>Most optimistic value</b></label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder=""  value="{{ mov }}" disabled class="form-control inputmask">
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label"><b>PEG Ratio</b></label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder=""  value="{{ peg }}" disabled class="form-control inputmask">
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Book Value</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder=""  value="{{ bpe }}" disabled class="form-control inputmask">
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label"><b>P/B Ratio</b></label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder=""  value="{{ pbr }}" disabled  class="form-control inputmask">
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label"><b>ROE</b></label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder=""  value="{{ roe }}" disabled class="form-control inputmask">
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">D/E Ratio</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder="" value="{{list.der}}" disabled class="form-control inputmask">
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Free Cash Flow</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder="" value="{{list.fcf}}" disabled class="form-control inputmask">
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label"><b>PSR</b></label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder=""  value="{{ psr }}" disabled class="form-control inputmask">
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label"><b>CAGR</b></label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder="" value="{{ cagr }}" disabled class="form-control inputmask">
+
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            </div>
+
+                        <!-- end row -->
+                    </div>
+                    <!-- end container-fluid -->
+                </div>
+                <!-- end app-main -->
+            </div>
+            <!-- end app-container -->
+            <!-- begin footer -->
+            <footer class="footer">
+                <div class="row">
+                    <div class="col-12 col-sm-6 text-center text-sm-left">
+                        <p>&copy; Copyright 2019. All rights reserved.</p>
+                    </div>
+                    <div class="col  col-sm-6 ml-sm-auto text-center text-sm-right">
+                        <p>Hand-crafted made with <i class="fa fa-heart text-danger mx-1"></i> by DPT Designs</p>
+                    </div>
+                </div>
+            </footer>
+            <!-- end footer -->
+        </div>
+        <!-- end app-wrap -->
+    </div>
+    <!-- end app -->
+
+
+{% endblock content %}
