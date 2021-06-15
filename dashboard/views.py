@@ -54,6 +54,7 @@ def user_register(request):
 @login_required(login_url="/login/")
 def dashboard(request):
     comps = companies.objects.filter(user=request.user)
+
     context = {}
     context["user"] = request.user
     context["comp_list"] = comps
