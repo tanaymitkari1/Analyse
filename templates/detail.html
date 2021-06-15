@@ -258,47 +258,48 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label"><b>Average PE</b></label>
+                                                <label class="col-sm-2 col-form-label"><b class="bld">Average PE</b></label>
                                                 <div class="col-sm-10">
                                                     <input type="text" placeholder="" value="{{ average_pe }}" disabled class="form-control inputmask">
 
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label"><b>PE Growth Rate</b></label>
+                                                <label class="col-sm-2 col-form-label"><b class="bld">PE Growth Rate</b></label>
                                                 <div class="col-sm-10">
                                                     <input type="text" placeholder="" value="{{ pegr }}" disabled class="form-control inputmask">
 
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label"><b>Best case PE</b></label>
+                                                <label class="col-sm-2 col-form-label"><b class="bld">Best case PE</b></label>
                                                 <div class="col-sm-10">
                                                     <input type="text" placeholder="" value="{{ bpe }}" disabled class="form-control inputmask">
 
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label"><b>Intransic Value</b></label>
+                                                <label class="col-sm-2 col-form-label"><b class="bld">Intransic Value</b></label>
                                                 <div class="col-sm-10">
                                                     <input type="text" placeholder=""  value="{{ iv }}" disabled class="form-control inputmask">
-
+                                                        <p>To gain maximum profit always buy at Intransic Value</p>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label"><b>Most optimistic value</b></label>
+                                                <label class="col-sm-2 col-form-label"><b class="bld">Most optimistic value</b></label>
                                                 <div class="col-sm-10">
                                                     <input type="text" placeholder=""  value="{{ mov }}" disabled class="form-control inputmask">
 
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label"><b>PEG Ratio</b></label>
+                                                <label class="col-sm-2 col-form-label"><b class="bld">PEG Ratio</b></label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" placeholder=""  value="{{ peg }}  Should less than 1 otherwise stock is overvalued"  disabled class="form-control inputmask">
-
+                                                    <input type="text" placeholder=""  value="{{ peg }} "  disabled class="form-control inputmask">
+                                                        <p>PEG ratio more than 1 suggest overvalued stock</p>
                                                 </div>
                                             </div>
+
                                             <h3>Additional Ratios</h3><br>
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Book Value</label>
@@ -308,24 +309,24 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label"><b>P/B Ratio</b></label>
+                                                <label class="col-sm-2 col-form-label"><b class="bld">P/B Ratio</b></label>
                                                 <div class="col-sm-10">
                                                     <input type="text" placeholder=""  value="{{ pbr }}" disabled  class="form-control inputmask">
-
+                                                        <p>P/B ratio should be ideally be less than 1 but still tolerable till 3</p>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label"><b>ROE</b></label>
+                                                <label class="col-sm-2 col-form-label"><b class="bld">ROE</b></label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" placeholder=""  value="{{ roe }}" disabled class="form-control inputmask">
-
+                                                    <input type="text" placeholder=""  value="{{ roe }} %" disabled class="form-control inputmask">
+                                                        <p>Should be minimum 15%</p>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">D/E Ratio</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" placeholder="" value="{{list.der}}" disabled class="form-control inputmask">
-
+                                                        <p>Shold be less than 1</p>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -336,18 +337,18 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label"><b>PSR</b></label>
+                                                <label class="col-sm-2 col-form-label"><b class="bld">PSR</b></label>
                                                 <div class="col-sm-10">
                                                     <input type="text" placeholder=""  value="{{ psr }}" disabled class="form-control inputmask">
-
+                                                        <p>Below 1.5 is perfect or close to 2 is tolerable</p>
                                                 </div>
                                             </div>
                                             <h3>Gain Estimation</h3><br>
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label"><b>CAGR</b></label>
+                                                <label class="col-sm-2 col-form-label"><b class="bld">CAGR</b></label>
                                                 <div class="col-sm-10">
                                                     <input type="text" placeholder="" value="{{ cagr }}" disabled class="form-control inputmask">
-
+                                                        <p>CAGR may vary due to market volatility</p>
                                                 </div>
                                             </div>
                                         </form>
