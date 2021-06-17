@@ -8,6 +8,9 @@ from . models import companies
 
 # Create your views here.
 
+def tutorial(request):
+    return render(request, 'tutorial.html')
+
 def user_login(request):
     context = {}
     if request.method == "POST":

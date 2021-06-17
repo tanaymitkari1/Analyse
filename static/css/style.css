@@ -8,3 +8,9 @@
 .bld{
     color: black;
 }
+@media only screen and (max-width: 600px) {
+  .iframe-container{
+    width: 20%;
+    height: 100%;
+  }
+}

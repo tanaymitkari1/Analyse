@@ -5,7 +5,7 @@
 {% block content %}
 
     <!-- begin app -->
-<div class="app" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    <div class="app">
         <!-- begin app-wrap -->
         <div class="app-wrap">
             <!-- begin pre-loader -->
@@ -61,13 +61,10 @@
                                         <div class="bg-gradient px-4 py-3">
                                             <div class="d-flex align-items-center justify-content-between">
                                                 <div class="mr-1">
-                                                    <h4 class="text-white mb-0">{{ user.username }}</h4>
-
+                                                    <h4 class="text-white mb-0">User Name</h4>
+                                                    <small class="text-white">Email</small>
                                                 </div>
-                                                <form method="post" action="/logout">
-                                                    {% csrf_token %}
-                                                <input type="submit"><a href="#" class="text-white font-20 tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Logout"> <i class="zmdi zmdi-power"></i></a></input>
-                                                </form>
+                                                <a href="#" class="text-white font-20 tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Logout"> <i class="zmdi zmdi-power"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -87,33 +84,12 @@
                     <!-- begin sidebar-nav -->
                     <div class="sidebar-nav scrollbar scroll_light">
                         <ul class="metismenu " id="sidebarNav">
-                            <li class="nav-static-title"></li>
+                            <li class="nav-static-title">Personal</li>
                             <li class="active">
-                                <a class="has-arrow" href="javascript:void(0)" aria-expanded="false">
+                                <a class="has-arrow" href="{% url 'dashboard' %}" aria-expanded="false">
                                     <i class="nav-icon ti ti-rocket"></i>
                                     <span class="nav-title">Dashboard</span>
                                 </a>
-                            </li>
-                            <li class="active">
-                                <a class="has-arrow" href="{% url 'add' %}" aria-expanded="false">
-                                    <i class="nav-icon ti ti-plus"></i>
-                                    <span class="nav-title">Add New</span>
-                                </a>
-                            </li>
-                            <li class="active">
-                                <a class="has-arrow" href="{% url 'tutorial' %}" aria-expanded="false">
-                                    <i class="nav-icon ti ti-cup"></i>
-                                    <span class="nav-title">Tutorial</span>
-                                </a>
-                            </li>
-                            <li class="active">
-                                <form method="post" action="/logout/">
-                                    {% csrf_token %}
-                                    <a class="has-arrow" href="#" aria-expanded="false">
-                                        <i class="nav-icon ti ti-power-off"></i>
-                                        <input type="submit" value="Logout"> </input>
-                                    </a>
-                                </form>
                             </li>
                         </ul>
                     </div>
@@ -130,7 +106,7 @@
                                 <!-- begin page title -->
                                 <div class="d-block d-sm-flex flex-nowrap align-items-center">
                                     <div class="page-title mb-2 mb-sm-0">
-                                        <h1>Dashboard</h1>
+                                        <h1>Input Fields</h1>
                                     </div>
                                     <div class="ml-auto d-flex align-items-center">
                                         <nav>
@@ -153,55 +129,25 @@
                         <!-- begin row -->
 
 
-                                <div class="card card-statistics dating-contant mb-0">
+                                <!-- begin row -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card card-statistics">
                                     <div class="card-header">
-                                        <h4 class="card-title">View all companies</h4>
-                                        <a href="#">Add New </a>
-                                    </div>
-                                    <div class="card-body pt-2 scrollbar scroll_dark" style="height: 300px">
-                                        <div class="table-responsive">
-                                            <table id="datatable-buttons" class="table table-striped">
-                                                <thead>
-                                                    <tr>
-                                                        <th class="border-top-0">No.</th>
-                                                        <th class="border-top-0">Company Name</th>
-                                                        <th class="border-top-0">Date</th>
-                                                        <th class="border-top-0">PE</th>
-                                                        <th class="border-top-0">Debt Equity Ratio</th>
-                                                        <th class="border-top-0">Free cash flow</th>
-                                                    </tr>
-                                                </thead>
-                                                {% if comp_list %}
-                                                <tbody class="text-muted">
-                                                {% for comp_list in comp_list %}
-                                                    <tr>
-
-                                                        <td>{{forloop.counter}}</td>
-                                                        <td>
-                                                            <p><a href="/{{comp_list.id}}/details">{{comp_list.stock_name}}</a></p>
-                                                        </td>
-                                                        <td>{{comp_list.date}}</td>
-                                                        <td>
-                                                            <p>{{comp_list.cpe}}</p>
-                                                        </td>
-                                                        <td>
-                                                            <p>{{comp_list.der}}</p>
-                                                        </td>
-                                                        <td>
-                                                            <p>{{comp_list.fcf}}</p>
-                                                        </td>
-
-                                                    </tr>
-                                                {% endfor %}
-                                                {% else %}
-                                                    <p>You haven't added any company</p>
-
-                                                </tbody>
-                                                {% endif %}
-                                            </table>
+                                        <div class="card-heading">
+                                            <h4 class="card-title">Tutorial</h4>
                                         </div>
                                     </div>
+                                    <div class="card-body iframe-container">
+                                       <iframe width="560" height="315" src="https://www.youtube.com/embed/0_0_n-KDM_8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                                    </div>
+
                                 </div>
+
+                            </div>
+
+                        </div>
                             </div>
 
                         <!-- end row -->
@@ -210,8 +156,8 @@
                 </div>
                 <!-- end app-main -->
             </div>
-            <!-- end app-container -->
 
+            <!-- end app-container -->
             <!-- begin footer -->
             <footer class="footer">
                 <div class="row">
@@ -219,7 +165,7 @@
                         <p>&copy; Copyright 2021. All rights reserved.</p>
                     </div>
                     <div class="col  col-sm-6 ml-sm-auto text-center text-sm-right">
-                        <p>Hand-crafted with <i class="fa fa-heart text-danger mx-1"></i> by DPT Designs</p>
+                        <p>Hand-crafted made with <i class="fa fa-heart text-danger mx-1"></i> by DPT Designs</p>
                     </div>
                 </div>
             </footer>
@@ -228,6 +174,7 @@
         <!-- end app-wrap -->
     </div>
     <!-- end app -->
+
 
 
 {% endblock content %}

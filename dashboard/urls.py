@@ -5,6 +5,7 @@ from .views import *
 urlpatterns = [
     path('', dashboard, name="dashboard"),
     path('add_new/', add_company, name="add"),
+    path('tutorial/', tutorial, name="tutorial"),
     path('details/', details, name="details"),
     path('login/', user_login, name="user_login"),
     path('logout/', user_logout, name="user_logout"),
