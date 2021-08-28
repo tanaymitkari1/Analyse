@@ -140,12 +140,12 @@ def details(request, id=None):
     psr = context["list"].market_cap/context["list"].sales
     context["psr"] = psr
     ccgp = context["list"].cmp/iv
-    pro_eps = (((1+0.15)**3)*context["list"].eps1)
+    pro_eps = (((1+0.15)**1)*context["list"].eps1)
     context["pro_eps"] = pro_eps
     ipe = pro_eps * av
     pp = ipe * pro_eps
     opcg = pp - context["list"].cmp
     print(opcg)
-    cagr = (((((context["list"].cmp + opcg) / context["list"].cmp)**0.34)-1)*100)/3
+    cagr = (((((context["list"].cmp + opcg) / context["list"].cmp)**1)-1))
     context["cagr"] = cagr
     return render(request, 'detail.html', context)
